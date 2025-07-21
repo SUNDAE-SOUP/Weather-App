@@ -146,6 +146,12 @@ input {
   white-space: nowrap;
 }
 
+.city-name {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 .celsius {
   font-size: 17px;
   position: relative;

@@ -12,7 +12,7 @@ async function getCityCoordinates(city) {
 
                 const cityName = loc.name;
                 const country = loc.country;
-                const region = loc.admin1;
+                const region = loc.admin1 ? loc.admin1 + ", " : "";
                 const region2 = loc?.admin2 ? "(" + loc.admin2 + ")" : "";
                 const weatherInfo = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${loc.latitude}&longitude=${loc.longitude}&current=temperature_2m,visibility,wind_speed_10m,relative_humidity_2m,apparent_temperature,weather_code,pressure_msl,is_day`);
                 const weatherOutput = await weatherInfo.json();
@@ -20,8 +20,8 @@ async function getCityCoordinates(city) {
                 const cardInfo = `
                                 <div class="weather-card animate__animated animate__fadeIn animate__faster">
                                     <div class="location-name">
-                                        <h4>${cityName}</h4>
-                                        <p class="subChar">${region}, ${country} ${region2}</p>
+                                        <h4 class="city-name">${cityName}</h4>
+                                        <p class="subChar">${region} ${country} ${region2}</p>
                                     </div>
                                     <div class="weather-items">
                                         <div>
@@ -89,7 +89,7 @@ const iconIdentifier = (wsm_code, is_day) => {
     const rainCodes = [51, 53, 55, 61, 63, 65, 80, 81, 82];
     const thunderCodes = [95, 96, 99];
     const cloudyCodes = [1, 2, 3];
-    let icons = '';
+    let icons = `<img class="icon" src="images/cloudy.png" alt="unknown">`;
 
     //cloudy, rain
     if (cloudyCodes.includes(wsm_code) && rainCodes.includes(wsm_code)) {
