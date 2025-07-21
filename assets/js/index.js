@@ -95,35 +95,35 @@ const iconIdentifier = (wsm_code, is_day) => {
     //cloudy, rain
     if (cloudyCodes.includes(wsm_code) && rainCodes.includes(wsm_code)) {
         if (!is_day) {
-            icons = `<img class="icon" src="/images/night_little_rain.png" alt="night_little_rain">`;
+            icons = `<img class="icon" src="images/night_little_rain.png" alt="night_little_rain">`;
         } else {
-            icons = `<img class="icon" src="/images/day_little_rain.png" alt="day_little_rain">`;
+            icons = `<img class="icon" src="images/day_little_rain.png" alt="day_little_rain">`;
         }
     }
 
     //strong rain
     if ([63, 65, 80, 81, 82].includes(wsm_code)) {
         if (!is_day) {
-            icons = `<img class="icon" src="/images/night_strong_rain.png" alt="night_strong_rain">`;
+            icons = `<img class="icon" src="images/night_strong_rain.png" alt="night_strong_rain">`;
         } else {
-            icons = `<img class="icon" src="/images/day_strong_rain.png" alt="day_strong_rain">`;
+            icons = `<img class="icon" src="images/day_strong_rain.png" alt="day_strong_rain">`;
         }
     }
 
     //strong rain with thunder
     if (thunderCodes.includes(wsm_code)) {
         if (!is_day) {
-            icons = `<img class="icon" src="/images/night_rain_thunder.png" alt="night_rain_thunder">`;
+            icons = `<img class="icon" src="images/night_rain_thunder.png" alt="night_rain_thunder">`;
         } else {
-            icons = `<img class="icon" src="/images/day_rain_thunder.png" alt="day_rain_thunder">`;
+            icons = `<img class="icon" src="images/day_rain_thunder.png" alt="day_rain_thunder">`;
         }
     }
     //night/day and cloudy
     if ([0, 1, 2, 3].includes(wsm_code)) {
         if (!is_day) {
-            icons = `<img class="icon" src="/images/night.png" alt="night">`;
+            icons = `<img class="icon" src="images/night.png" alt="night">`;
         } else {
-            icons = `<img class="icon" src="/images/day.png" alt="day">`;
+            icons = `<img class="icon" src="images/day.png" alt="day">`;
         }
     }
     //cloudy only
