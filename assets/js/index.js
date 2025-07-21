@@ -16,7 +16,6 @@ async function getCityCoordinates(city) {
                 const region2 = loc?.admin2 ? "(" + loc.admin2 + ")" : "";
                 const weatherInfo = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${loc.latitude}&longitude=${loc.longitude}&current=temperature_2m,visibility,wind_speed_10m,relative_humidity_2m,apparent_temperature,weather_code,pressure_msl,is_day`);
                 const weatherOutput = await weatherInfo.json();
-                console.log("weatherOutput: ", weatherOutput);
                 const wc = iconIdentifier(weatherOutput.current.weather_code, weatherOutput.current.is_day);
                 const cardInfo = `
                                 <div class="weather-card animate__animated animate__fadeIn animate__faster">
